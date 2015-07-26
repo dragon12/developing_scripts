@@ -6,9 +6,12 @@ if [ $# -ne 1 ]; then
 fi
 
 backup_dir=/media/sf_vbox_shared/wp_backups/
-backup_name="wp_backup_`date +%Y%m%d`.$1"
-echo "Backing up to $backup_name"
 
-ssh gerardsw@gerardsweeney.com "tar zcf $backup_name public_html/wp" 
-scp gerardsw@gerardsweeney.com:$backup_name $backup_dir/$backup_name
+for thisType in travel cooksconversions bakersconversions; do
+    backup_name="wp_backup_${thisType}_`date +%Y%m%d`.$1"
+    echo "Backing up to $backup_name"
+
+    ssh gerardsw@gerardsweeney.com "tar zcf $backup_name public_html/$thisType" 
+    scp gerardsw@gerardsweeney.com:$backup_name $backup_dir/$backup_name
+done
 
