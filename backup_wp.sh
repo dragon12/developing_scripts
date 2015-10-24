@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -ne 1 ]; then
-    echo "specify an arg"
+    echo "specify a suffix for the backup name"
     exit
 fi
 
