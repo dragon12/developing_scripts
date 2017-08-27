@@ -8,7 +8,7 @@ fi
 backup_dir=/media/sf_vbox_shared/db_backups/
 backup_name=`date +%Y%m%d`.$1
 
-aws_host=aat1mi7irs03pe.c8diubsyktgp.us-west-2.rds.amazonaws.com
+aws_host=aa1x5mwgnjremq5.c8diubsyktgp.us-west-2.rds.amazonaws.com
 echo "Backing up to $backup_name"
 
 /usr/lib/postgresql/9.4/bin/pg_dump --host=$aws_host --username=produser --dbname=ebdb -E utf8 -c -O > /tmp/$backup_name.ebdb.sql
