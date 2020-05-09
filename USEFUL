@@ -1,0 +1,6 @@
+gci - get child info
+e.g. gci env: -- print all env vars
+
+make a link:  cmd /c mklink profile.ps1 $HOME\github\dotfiles\profile.ps1
+
+run a go script: go run <>
